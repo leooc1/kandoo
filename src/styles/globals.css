@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('./theme-button.css');
+@import url('./mode-button.css');
+
+*::-webkit-scrollbar{
+  width: 0px;
+}

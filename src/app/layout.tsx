@@ -1,6 +1,9 @@
-import './globals.css'
+import { FilterProvider } from '@/context/FilterContext'
+import { ThemeProvider } from '@/context/ThemeContext'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import '../styles/globals.css'
+import { ModeProvider } from '@/context/ModeContext'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,7 +19,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <ThemeProvider>
+          <ModeProvider>
+            <FilterProvider>
+              {children}
+            </FilterProvider>
+          </ModeProvider>
+        </ThemeProvider>
+      </body>
     </html>
   )
 }

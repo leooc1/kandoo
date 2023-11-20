@@ -1,6 +1,5 @@
-import type { Config } from 'tailwindcss'
-
-const config: Config = {
+/** @type {import('tailwindcss').Config} */
+module.exports = {
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -8,7 +7,26 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors: {
+        /* dark */
+        'dark-bg-color': '#161722',
+        'dark-bg-main': '#25273c',
+        'dark-text-main': '#cacde8',
+        'dark-text-secondary': '#777a92',
+        'dark-text-hover': '#e4e5f1',
+        'dark-text-concluded': '#4d5066',
+        /* light */
+        'light-bg-color': '#fafafa',
+        'light-bg-main': '#e4e5f1',
+        'light-text-secondary': '#9394a5',
+        'light-text-hover': '#484b6a',
+        'light-text-concluded': '#d2d3db'
+      },
       backgroundImage: {
+        'dark-image': 'url("/img/bg-desktop-dark.jpg")',
+        'light-image': 'url("/img/bg-desktop-light.jpg")',
+        'dark-image-mobile': 'url("/img/bg-mobile-dark.jpg")',
+        'light-image-mobile': 'url("/img/bg-mobile-light.jpg")',
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
@@ -17,4 +35,3 @@ const config: Config = {
   },
   plugins: [],
 }
-export default config
